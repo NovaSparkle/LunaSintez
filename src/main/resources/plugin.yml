@@ -1,0 +1,26 @@
+name: LunaSintez
+version: '${project.version}'
+main: org.novasparkle.lunasintez.LunaSintez
+api-version: '1.16'
+author: NovaSparkle
+depend:
+  - LunaSpring
+  - NBTAPI
+  - SateSpawnerAPI
+commands:
+  lunasintez:
+    usage: '/lunasintez'
+    aliases:
+      - lsz
+
+permissions:
+  lunasintez.admin:
+    default: op
+  lunasintez.showLine:
+    default: op
+  lunasintez.reload:
+    default: op
+  lunasintez.next:
+    default: op
+  lunasintez.give:
+    default: op

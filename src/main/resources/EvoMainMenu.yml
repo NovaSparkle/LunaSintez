@@ -1,0 +1,103 @@
+title: "{M}Меню эволюций"
+size: 54
+decoration:
+  1:
+    material: MAGENTA_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "0-1"
+      - "7-9"
+      - "17-18"
+      - "26-27"
+      - "35-36"
+      - "44-46"
+      - "52-53"
+  2:
+    material: WHITE_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    amount: 1
+    slots:
+      - "2"
+      - "6"
+      - "10"
+      - "16"
+      - "19"
+      - '25'
+      - '28'
+      - '34'
+      - '37'
+      - '43'
+      - '47'
+      - '51'
+
+items:
+  order:
+    - 21
+    - 22
+    - 23
+    - 30
+    - 31
+    - 32
+
+  clickable:
+    INFO:
+      material: CRIMSON_SIGN
+      displayName: '{S}Информация'
+      lore:
+        - ''
+        - '{S}Эволюции - продолжение синтеза'
+        - '{S}У &mкаждого &r{S}большинства мобов'
+        - '{S}Есть возможность эволюции'
+        - ''
+        - '{S}Для открытия эволюционного моба, необходимо'
+        - '{S}Подобрать комбинацию из осколков души {M}(Окаянтов)'
+        - '{S}Внутри меню'
+        - ''
+      slot: 4
+
+    DROP:
+      material: PHANTOM_MEMBRANE
+      displayName: '{S}Похитить рассадник'
+      lore:
+        - ''
+        - '{S}Нажмите, чтобы получить этот'
+        - '{S}Рассадник в виде предмета'
+        - ''
+        - '{S}Учтите, что сохранится только'
+        - '{S}&nТекущий тип моба'
+      slot:
+        row: 6
+        column: 4
+
+    SINTEZ:
+      material: NETHER_STAR
+      displayName: '{S}К синтезу'
+      lore:
+        - ''
+        - '{S}Переключить на меню синтеза'
+        - ''
+      slot:
+        row: 6
+        column: 6
+
+  LOCKED:
+    material: PLAYER_HEAD
+    baseHead: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGVjNjVmYzg3YzUwNDQxNWVmZjczMGEyZjRmZTdkMDZkMmYxMTZlYTJhMzEzNDgxZjM2MmQwYTI1ZDY1ZTUwMCJ9fX0='
+    displayName: '{E}Неэволюционный моб'
+    lore:
+      - ''
+      - '{S}Для открытия возможности эволюции'
+      - '{S}Необходимо синтезировать этого моба'
+      - ''
+
+  EVO_OPENED:
+    lore:
+      - '{S}Этот моб может эволюционировать'
+
+  EVOLUTED:
+    lore:
+      - '{S}Эволюция открыта'
+    enchanted: true

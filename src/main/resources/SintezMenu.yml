@@ -1,0 +1,54 @@
+size: 54
+
+lockedQueue:
+  COMMON:
+    - '18-26'
+
+  RARE:
+    - '18-35'
+
+  EPIC:
+    - '9-35'
+
+  UNREAL:
+    - '9-35'
+
+sintezSlot: 49
+
+decoration:
+  fillType:
+    enabled: true
+    item:
+      material: BLACK_STAINED_GLASS_PANE
+      displayName: "&7Разделитель"
+      lore: [ ]
+
+items:
+  defaultMaterial: BARRIER
+  BACK:
+    material: DARK_OAK_DOOR
+    displayName: '{S}Главное меню'
+    lore: [ ]
+    slot: 52
+
+  INSTRUCTION:
+    material: MAP
+    displayName: '{S}Инструкция'
+    lore: [ ]
+    slot: 53
+
+  SINTEZ:
+    material: EMERALD
+    displayName: '{S}Синтез'
+    lore: [ ]
+    slot: 51
+
+  LOCKED_ITEM:
+    material: PLAYER_HEAD
+    displayName: '{E}Закрытый предмет'
+    baseHead: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzQ4N2ZmYWIxNWQ2MjhjYjBlZDQ5MzkxOWUxNTRkYTBiOTdiMDYxM2JiNDBmOGIzODc1N2RlNTA3YmJkNjA5NCJ9fX0='
+    lore: [ ]
+
+  OPENED_ITEM:
+    lore:
+      - '{S}Угаданный предмет'

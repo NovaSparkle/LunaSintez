@@ -1,0 +1,613 @@
+SSAPI:
+  priority: 10
+
+entityTypes:
+  COW:
+    material: COW_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Корова'
+    evolution:
+      entityType: MUSHROOM_COW
+      material: MOOSHROOM_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  SKELETON:
+    material: SKELETON_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Скелет'
+    evolution:
+      entityType: WITHER_SKELETON
+      material: WITHER_SKELETON_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  BLAZE:
+    material: BLAZE_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Ифрит'
+    evolution:
+      entityType: WITHER
+      material: WOLF_SPAWN_EGG
+      displayName: '{S}Иссушитель'
+      lore: [ ]
+
+  SLIME:
+    material: SLIME_SPAWN_EGG
+    lore: [ ]
+    category: 'EPIC'
+    displayName: '{S}Слайм'
+    evolution:
+      entityType: MAGMA_CUBE
+      material: MAGMA_CUBE_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  CAVE_SPIDER:
+    material: CAVE_SPIDER_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Пещерный паук'
+    evolution:
+      entityType: WITCH
+      material: WITCH_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  PARROT:
+    material: PARROT_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Попугай'
+    evolution:
+      entityType: PHANTOM
+      material: PHANTOM_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  ZOMBIE:
+    material: ZOMBIE_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Зомби'
+    evolution:
+      entityType: ZOMBIFIED_PIGLIN
+      material: ZOMBIFIED_PIGLIN_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  CREEPER:
+    material: CREEPER_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Крипер'
+    evolution:
+      entityType: GHAST
+      material: GHAST_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  VINDICATOR:
+    material: VINDICATOR_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Поборник'
+    evolution:
+      entityType: VILLAGER
+      material: VILLAGER_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  ENDERMAN:
+    material: ENDERMAN_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Эндермен'
+    evolution:
+      entityType: SHULKER
+      material: SHULKER_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  GUARDIAN:
+    material: GUARDIAN_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Страж'
+    evolution:
+      entityType: ELDER_GUARDIAN
+      material: ELDER_GUARDIAN_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  PILLAGER:
+    material: PILLAGER_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Разбойник'
+    evolution:
+      entityType: IRON_GOLEM
+      material: BAT_SPAWN_EGG
+      displayName: '{S}Железный голем'
+      lore: [ ]
+
+  PIG:
+    material: PIG_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Свинка'
+    evolution:
+      entityType: PIGLIN
+      material: PIGLIN_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  OCELOT:
+    material: OCELOT_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Оцелот'
+    evolution:
+      entityType: CAT
+      material: CAT_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  DROWNED:
+    material: DROWNED_SPAWN_EGG
+    lore: [ ]
+    category: 'RARE'
+    displayName: '{S}Утопленник'
+    evolution:
+      entityType: ZOMBIE_VILLAGER
+      material: ZOMBIE_VILLAGER_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  SQUID:
+    material: SQUID_SPAWN_EGG
+    lore: [ ]
+    category: 'COMMON'
+    displayName: '{S}Спрут'
+    evolution:
+      entityType: TURTLE
+      material: TURTLE_SPAWN_EGG
+      displayName: ''
+      lore: [ ]
+
+  EVOKER:
+    material: EVOKER_SPAWN_EGG
+    lore: [ ]
+    category: 'UNREAL'
+    displayName: '{S}Заклинатель'
+    evolution:
+      material: BARRIER
+      displayName: '{S}Невозможный'
+      lore:
+        - '{E}У этого моба нет эволюции, увы'
+
+  POLAR_BEAR:
+    material: POLAR_BEAR_SPAWN_EGG
+    lore: [ ]
+    category: 'UNREAL'
+    displayName: '{S}Белый Мишка'
+    evolution:
+      material: BARRIER
+      displayName: '{S}Невозможный'
+      lore:
+        - '{E}У этого моба нет эволюции, увы'
+
+  WANDERING_TRADER:
+    material: WANDERING_TRADER_SPAWN_EGG
+    lore: [ ]
+    category: 'UNREAL'
+    displayName: '{S}Странствующий торговец'
+    evolution:
+      material: BARRIER
+      displayName: '{S}Невозможный'
+      lore:
+        - '{E}У этого моба нет эволюции, увы'
+
+
+categories:
+  COMMON:
+    name: 'Обычные'
+    priority: 1
+    instructionSize: 18
+    lineSize: 9
+    items:
+      APPLE:
+        material: APPLE
+      ARROW:
+        material: ARROW
+      BEETROOT:
+        material: BEETROOT
+      BLAZE_ROD:
+        material: BLAZE_ROD
+      BONE:
+        material: BONE
+      BOOK:
+        material: BOOK
+      BUCKET:
+        material: BUCKET
+      CARROT:
+        material: CARROT
+      CHARCOAL:
+        material: CHARCOAL
+      COAL:
+        material: COAL
+      COD:
+        material: COD
+      EMERALD:
+        material: EMERALD
+      ENDER_PEARL:
+        material: ENDER_PEARL
+      FLINT:
+        material: FLINT
+      GLOWSTONE:
+        material: GLOWSTONE
+      GLOWSTONE_DUST:
+        material: GLOWSTONE_DUST
+      GOLD_INGOT:
+        material: GOLD_INGOT
+      GOLD_NUGGET:
+        material: GOLD_NUGGET
+      GOLD_ORE:
+        material: GOLD_ORE
+      GUNPOWDER:
+        material: GUNPOWDER
+      IRON_INGOT:
+        material: IRON_INGOT
+      IRON_NUGGET:
+        material: IRON_NUGGET
+      IRON_ORE:
+        material: IRON_ORE
+      LAPIS_LAZULI:
+        material: LAPIS_LAZULI
+      LEATHER:
+        material: LEATHER
+      MAGMA_CREAM:
+        material: MAGMA_CREAM
+      MELON:
+        material: MELON
+      NETHER_GOLD_ORE:
+        material: NETHER_GOLD_ORE
+      NETHER_WART:
+        material: NETHER_WART
+      POTATO:
+        material: POTATO
+      PUFFERFISH:
+        material: PUFFERFISH
+      PUMPKIN:
+        material: PUMPKIN
+      QUARTZ:
+        material: QUARTZ
+      SPIDER_EYE:
+        material: SPIDER_EYE
+      WHEAT:
+        material: WHEAT
+      SUGAR_CANE:
+        material: SUGAR_CANE
+
+  RARE:
+    name: 'Редкие'
+    priority: 2
+    instructionSize: 27
+    lineSize: 18
+    items:
+      NETHER_GOLD_ORE:
+        material: NETHER_GOLD_ORE
+      BOOKSHELF:
+        material: BOOKSHELF
+      DIAMOND_ORE:
+        material: DIAMOND_ORE
+      GLOWSTONE:
+        material: GLOWSTONE
+      EMERALD_BLOCK:
+        material: EMERALD_BLOCK
+      EMERALD_ORE:
+        material: EMERALD_ORE
+      NETHER_QUARTZ_ORE:
+        material: NETHER_QUARTZ_ORE
+      HAY_BLOCK:
+        material: HAY_BLOCK
+      PACKED_ICE:
+        material: PACKED_ICE
+      BLACKSTONE:
+        material: BLACKSTONE
+      SOUL_CAMPFIRE:
+        material: SOUL_CAMPFIRE
+      ANVIL:
+        material: ANVIL
+      ENDER_CHEST:
+        material: ENDER_CHEST
+      CHORUS_FLOWER:
+        material: CHORUS_FLOWER
+      END_ROD:
+        material: END_ROD
+      ENCHANTING_TABLE:
+        material: ENCHANTING_TABLE
+      HONEYCOMB_BLOCK:
+        material: HONEYCOMB_BLOCK
+      POWERED_RAIL:
+        material: POWERED_RAIL
+      RAIL:
+        material: RAIL
+      TNT:
+        material: TNT
+      PISTON:
+        material: PISTON
+      DAYLIGHT_DETECTOR:
+        material: DAYLIGHT_DETECTOR
+      DISPENSER:
+        material: DISPENSER
+      DROPPER:
+        material: DROPPER
+      SHULKER_SHELL:
+        material: SHULKER_SHELL
+      GLOWSTONE_DUST:
+        material: GLOWSTONE_DUST
+      ENDER_EYE:
+        material: ENDER_EYE
+      COMPASS:
+        material: COMPASS
+      PUMPKIN_PIE:
+        material: PUMPKIN_PIE
+      CLOCK:
+        material: CLOCK
+      NAME_TAG:
+        material: NAME_TAG
+      DRAGON_BREATH:
+        material: DRAGON_BREATH
+      GOLDEN_CARROT:
+        material: GOLDEN_CARROT
+      HOPPER:
+        material: HOPPER
+      MAGMA_CREAM:
+        material: MAGMA_CREAM
+      CAULDRON:
+        material: CAULDRON
+      SOUL_SAND:
+        material: SOUL_SAND
+      FERMENTED_SPIDER_EYE:
+        material: FERMENTED_SPIDER_EYE
+      BREWING_STAND:
+        material: BREWING_STAND
+      GOLDEN_APPLE:
+        material: GOLDEN_APPLE
+      RABBIT_HIDE:
+        material: RABBIT_HIDE
+      ARROW:
+        material: ARROW
+      GUNPOWDER:
+        material: GUNPOWDER
+      LEATHER:
+        material: LEATHER
+      BUCKET:
+        material: BUCKET
+      APPLE:
+        material: APPLE
+      BLAZE_ROD:
+        material: BLAZE_ROD
+      NAUTILUS_SHELL:
+        material: NAUTILUS_SHELL
+      OAK_SIGN:
+        material: OAK_SIGN
+      BLAZE_POWDER:
+        material: BLAZE_POWDER
+      GLISTERING_MELON_SLICE:
+        material: GLISTERING_MELON_SLICE
+      TROPICAL_FISH:
+        material: TROPICAL_FISH
+      DIAMOND:
+        material: DIAMOND
+
+  EPIC:
+    name: 'Эпические'
+    priority: 3
+    instructionSize: 36
+    lineSize: 27
+    items:
+      APPLE:
+        material: APPLE
+      GOLDEN_APPLE:
+        material: GOLDEN_APPLE
+      ENCHANTED_GOLDEN_APPLE:
+        material: ENCHANTED_GOLDEN_APPLE
+      CLOCK:
+        material: CLOCK
+      NAME_TAG:
+        material: NAME_TAG
+      LEAD:
+        material: LEAD
+      COMPASS:
+        material: COMPASS
+      GHAST_TEAR:
+        material: GHAST_TEAR
+      FERMENTED_SPIDER_EYE:
+        material: FERMENTED_SPIDER_EYE
+      CAULDRON:
+        material: CAULDRON
+      RABBIT_FOOT:
+        material: RABBIT_FOOT
+      DRAGON_BREATH:
+        material: DRAGON_BREATH
+      PHANTOM_MEMBRANE:
+        material: PHANTOM_MEMBRANE
+      GOLDEN_CARROT:
+        material: GOLDEN_CARROT
+      GLISTERING_MELON_SLICE:
+        material: GLISTERING_MELON_SLICE
+      PUFFERFISH:
+        material: PUFFERFISH
+      REDSTONE_LAMP:
+        material: REDSTONE_LAMP
+      ANCIENT_DEBRIS:
+        material: ANCIENT_DEBRIS
+      NETHERITE_BLOCK:
+        material: NETHERITE_BLOCK
+      DEAD_BUSH:
+        material: DEAD_BUSH
+      CONDUIT:
+        material: CONDUIT
+      BEE_NEST:
+        material: BEE_NEST
+      NETHER_STAR:
+        material: NETHER_STAR
+      BELL:
+        material: BELL
+      ANVIL:
+        material: ANVIL
+      BEACON:
+        material: BEACON
+      BLAZE_ROD:
+        material: BLAZE_ROD
+      BOOKSHELF:
+        material: BOOKSHELF
+      CHISELED_POLISHED_BLACKSTONE:
+        material: CHISELED_POLISHED_BLACKSTONE
+      COMPARATOR:
+        material: COMPARATOR
+      CRIMSON_PLANKS:
+        material: CRIMSON_PLANKS
+      DAYLIGHT_DETECTOR:
+        material: DAYLIGHT_DETECTOR
+      DIAMOND:
+        material: DIAMOND
+      DIAMOND_BLOCK:
+        material: DIAMOND_BLOCK
+      DIAMOND_ORE:
+        material: DIAMOND_ORE
+      DISPENSER:
+        material: DISPENSER
+      DRAGON_HEAD:
+        material: DRAGON_HEAD
+      DROPPER:
+        material: DROPPER
+      EMERALD_BLOCK:
+        material: EMERALD_BLOCK
+      EMERALD_ORE:
+        material: EMERALD_ORE
+      ENCHANTING_TABLE:
+        material: ENCHANTING_TABLE
+      END_CRYSTAL:
+        material: END_CRYSTAL
+      END_ROD:
+        material: END_ROD
+      ENDER_CHEST:
+        material: ENDER_CHEST
+      ENDER_EYE:
+        material: ENDER_EYE
+      ENDER_PEARL:
+        material: ENDER_PEARL
+      FLINT:
+        material: FLINT
+      GOLD_BLOCK:
+        material: GOLD_BLOCK
+      GOLD_INGOT:
+        material: GOLD_INGOT
+      GUNPOWDER:
+        material: GUNPOWDER
+      HAY_BLOCK:
+        material: HAY_BLOCK
+      HOPPER:
+        material: HOPPER
+      IRON_BLOCK:
+        material: IRON_BLOCK
+      IRON_TRAPDOOR:
+        material: IRON_TRAPDOOR
+      JUKEBOX:
+        material: JUKEBOX
+      LODESTONE:
+        material: LODESTONE
+      NETHER_GOLD_ORE:
+        material: NETHER_GOLD_ORE
+      NETHER_WART:
+        material: NETHER_WART
+      NETHERITE_INGOT:
+        material: NETHERITE_INGOT
+      PISTON:
+        material: PISTON
+      POISONOUS_POTATO:
+        material: POISONOUS_POTATO
+      POWERED_RAIL:
+        material: POWERED_RAIL
+      PUMPKIN_PIE:
+        material: PUMPKIN_PIE
+      RABBIT_HIDE:
+        material: RABBIT_HIDE
+      RAIL:
+        material: RAIL
+      RED_NETHER_BRICKS:
+        material: RED_NETHER_BRICKS
+      REDSTONE_BLOCK:
+        material: REDSTONE_BLOCK
+      WET_SPONGE:
+        material: WET_SPONGE
+      RESPAWN_ANCHOR:
+        material: RESPAWN_ANCHOR
+      SHULKER_SHELL:
+        material: SHULKER_SHELL
+      SLIME_BALL:
+        material: SLIME_BALL
+      SLIME_BLOCK:
+        material: SLIME_BLOCK
+      SOUL_SAND:
+        material: SOUL_SAND
+      SPONGE:
+        material: SPONGE
+      STICKY_PISTON:
+        material: STICKY_PISTON
+      TNT:
+        material: TNT
+      TROPICAL_FISH:
+        material: TROPICAL_FISH
+      TURTLE_EGG:
+        material: TURTLE_EGG
+
+
+
+  UNREAL:
+    name: 'Невозможные'
+    priority: 3
+    instructionSize: 36
+    lineSize: 27
+    items:
+      SNOWBALL:
+        material: SNOWBALL
+        nbtTags:
+          BearFur: true
+
+settings:
+  maxDistance: 3
+  particles:
+    onItemOpened:
+      radius: 0.5
+      color: '216, 109, 232'
+      delay: 25
+      addHeight: 0.1
+      amount: 1
+
+messages:
+  noPermission: '{E}Нет прав на выполнение команды!'
+  noItem: '{E}Недостаточно предметов: {M}[item]'
+  reloaded: '{S}Плагин перезагружен!'
+  alreadySintezied: '{S}Открылся тип {S}[newType], поскольку уже был в синтезе!'
+  noBlock: '{E}Наведитесь на рассадник!'
+  noSpawner: '{E}Некорректный блок: [block]. Наведитесь на рассадник!'
+  fullSpawner: '{E}Все мобы в рассаднике синтезированы!'
+  nextMobOpened: '{S}Следующий моб в спавнере открыт!'
+  InvalidArgs: '{E}Недосточно аргументов!'
+  noSuchPlayer: '{E}Не существует игрока с ником [player]!'
+  spawnerGiven: '{S}Выдан спавнер типа {M}[mob] {S}игроку {M}[player] {S}в кол-ве {M}[amount]'
+  notSintezable: '{E}Тип [mob] недоступен к выдаче!'
+  needOpen: '{E}Данные рассадника не сгенерированы, необходимо открыть его!'
+  EvoLocked: '{E}Эволюция недоступна!'
+  SintezLocked: '{E}Моб заблокирован!'
+  noEvo: '{E}Для моба {S}[mobType] {E}нет эволюции!'
+  horcruxPassed: '{S}Окаянт успешно вставлен!'
+  invalidHorcrux: '{E}Неверный тип окаянта! Необходимый: [requiredType]'
+  evoOpened: '{S}Эволюция разблокирована!'

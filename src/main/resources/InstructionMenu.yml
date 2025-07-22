@@ -1,0 +1,30 @@
+title: "{M}Инструкция ([mob]{M})"
+size: 45
+
+decoration:
+  fillType:
+    enabled: true
+    item:
+      material: BLACK_STAINED_GLASS_PANE
+      displayName: "&7Разделитель"
+      lore: [ ]
+
+items:
+  BACK:
+    material: DARK_OAK_DOOR
+    displayName: '{S}К синтезу'
+    lore: [ ]
+    slot: 44
+  SHOW:
+    material: PRISMARINE_SHARD
+    displayName: '{S}Спойлер'
+    lore: [ ]
+    color: '&f'
+    slot: 43
+  COPY:
+    material: DIAMOND
+    displayName: '{S}Копировать'
+    lore: [ ]
+    slot: 42
+
+startSlot: 0

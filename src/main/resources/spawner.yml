@@ -1,0 +1,32 @@
+completed:
+  - VINDICATOR
+
+mobs:
+  GUARDIAN:
+    status: NEXT
+    instruction:
+      - ''
+      - ''
+      - ''
+      - ''
+    line:
+      NETHER_GOLD_ORE: 54
+      BOOK: 0
+      IRON_NUGGET: 0
+  PARROT:
+    status: LOCKED
+
+evolutions:
+  VINDICATOR:
+    status: NEXT_EVO
+    mobType: VILLAGER
+    horcruxLeft:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
