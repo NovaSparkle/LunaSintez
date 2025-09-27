@@ -2,7 +2,6 @@ package org.novasparkle.lunasintez.sintez.mobs;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.EntityType;
 import org.jetbrains.annotations.NotNull;
 import org.novasparkle.lunasintez.configuration.ConfigManager;
@@ -10,58 +9,24 @@ import org.novasparkle.lunasintez.sintez.Category;
 import org.novasparkle.lunasintez.sintez.Instruction;
 import org.novasparkle.lunasintez.sintez.SintezSpawner;
 import org.novasparkle.lunasintez.sintez.mobs.status.EvoStatus;
-import org.novasparkle.lunasintez.sintez.mobs.status.MobStatus;
+import org.novasparkle.lunasintez.sintez.mobs.status.SintezStatus;
 import org.novasparkle.lunaspring.API.configuration.Configuration;
-
-import java.util.List;
 
 @Getter
 public class SintezMob extends MobType implements Comparable<SintezMob> {
     private Category category;
     @Setter
     private Instruction instruction;
-    private final EvoMob evoMob;
-    public SintezMob(EntityType entityType, SintezSpawner spawner, MobStatus status) {
+    public SintezMob(EntityType entityType, SintezSpawner spawner, SintezStatus status) {
         super(entityType, spawner, status);
-        String entityTypeStr = ConfigManager.getString(String.format("entityTypes.%s.evolution.entityType", this.getEntityType()));
-        EvoStatus evoStatus;
-        if (status == MobStatus.SINTEZ) {
-            String evoStatusStr = spawner.getConfig().getString(String.format("evolutions.%s.status", entityTypeStr));
-            if (evoStatusStr != null && !evoStatusStr.isEmpty())
-                evoStatus = EvoStatus.valueOf(evoStatusStr);
-            else evoStatus = EvoStatus.EVO_OPENED;
-
-
-        } else evoStatus = EvoStatus.LOCKED;
-
-        this.evoMob = new EvoMob(
-                entityTypeStr == null ? null : EntityType.valueOf(entityTypeStr),
-                this.getEntityType(),
-                this.getSintezSpawner(),
-                evoStatus
-        );
-
         try {
             this.category = Category.valueOf(ConfigManager.getString(String.format("entityTypes.%s.category", entityType)));
         } catch (IllegalArgumentException | NullPointerException e) {
             this.category = Category.COMMON;
         }
     }
-    public void unlockMobInConfig() {
-        Configuration config = this.getSintezSpawner().getConfig();
-        config.set(String.format("mobs.%s", this.entityType.name()), null);
-        ConfigurationSection section = config.getSection("mobs");
-        for (String key : section.getKeys(false)) {
-            section.set(String.format("%s.status", key), "NEXT");
-            config.set("evolutions.%s.status", EvoStatus.EVO_OPENED.name());
-            break;
-        }
-        List<String> completedList = config.getStringList("completed");
-        completedList.add(this.entityType.name());
-        config.setStringList("completed", completedList);
 
-        this.getSintezSpawner().saveConfig();
-    }
+
     @Override
     public String toString() {
         return "SintezMob{" +
@@ -73,5 +38,25 @@ public class SintezMob extends MobType implements Comparable<SintezMob> {
     @Override
     public int compareTo(@NotNull SintezMob o) {
         return this.category.getPriority() - o.category.getPriority();
+    }
+
+    public EvoMob toEvoMob() {
+        String evoEntityTypeStr = ConfigManager.getString(String.format("entityTypes.%s.evolution.entityType", this.entityType));
+        EvoStatus evoStatus;
+        EntityType evoEntityType = null;
+        if (evoEntityTypeStr == null || evoEntityTypeStr.isEmpty()) {
+            evoStatus = EvoStatus.NO_EVO;
+
+        } else if (this.getApplicator().equals(SintezStatus.SINTEZ)) {
+            Configuration spawnerConfig = this.sintezSpawner.getConfig();
+            String status = spawnerConfig.getString(String.format("evolutions.%s.status", this.entityType.name().toUpperCase()));
+            evoStatus = status != null && !status.isEmpty() ? EvoStatus.valueOf(status) : EvoStatus.EVO_OPENED;
+            evoEntityType = EntityType.valueOf(evoEntityTypeStr);
+
+        } else {
+            evoStatus = EvoStatus.LOCKED;
+            evoEntityType = EntityType.valueOf(evoEntityTypeStr);
+        }
+        return new EvoMob(evoEntityType, this.entityType, this.sintezSpawner, evoStatus);
     }
 }

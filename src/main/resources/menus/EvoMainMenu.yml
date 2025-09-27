@@ -101,3 +101,9 @@ items:
     lore:
       - '{S}Эволюция открыта'
     enchanted: true
+
+  NO_EVO:
+    material: BARRIER
+    displayName: '{S}Невозможный'
+    lore:
+      - '{E}У этого моба нет эволюции, увы'

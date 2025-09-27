@@ -1,9 +1,9 @@
-package org.novasparkle.lunasintez.menus.items;
+package org.novasparkle.lunasintez.items;
 
 import lombok.Getter;
 import org.jetbrains.annotations.Range;
 import org.novasparkle.lunaspring.API.configuration.Configuration;
-import org.novasparkle.lunaspring.API.menus.IMenu;
+import org.novasparkle.lunaspring.API.menus.ItemListMenu;
 import org.novasparkle.lunaspring.API.menus.items.Item;
 
 @Getter
@@ -13,6 +13,7 @@ public class LockedItem extends Item implements LineItem {
         super(sintezMenu.getMaterial("items.defaultMaterial"), slot);
         this.instructionItem = instructionItem;
         this.setAll(sintezMenu.getSection("items.LOCKED_ITEM"));
+        this.setSlot(slot);
     }
 
     @Override
@@ -21,7 +22,7 @@ public class LockedItem extends Item implements LineItem {
     }
 
     @Override
-    public void insertItem(IMenu iMenu) {
+    public void insertItem(ItemListMenu iMenu) {
         this.insert(iMenu);
     }
 

@@ -3,6 +3,7 @@ package org.novasparkle.lunasintez.sintez.mobs;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Mob;
 import org.novasparkle.lunasintez.sintez.SintezSpawner;
 import org.novasparkle.lunasintez.sintez.mobs.status.Applicator;
 
@@ -20,5 +21,12 @@ public abstract class MobType {
     }
     public void setMob() {
         this.sintezSpawner.setMob(this.entityType);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || this.getClass() != obj.getClass()) return false;
+        MobType thatMob = (MobType) obj;
+        return thatMob.getEntityType().equals(this.entityType);
     }
 }

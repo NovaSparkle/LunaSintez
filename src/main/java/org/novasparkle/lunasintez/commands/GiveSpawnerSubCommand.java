@@ -3,23 +3,24 @@ package org.novasparkle.lunasintez.commands;
 import com.google.common.collect.Lists;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.novasparkle.lunasintez.configuration.ConfigManager;
 import org.novasparkle.lunasintez.sintez.SintezSpawner;
-import org.novasparkle.lunaspring.API.commands.LunaCompleter;
+import org.novasparkle.lunaspring.API.commands.LunaExecutor;
 import org.novasparkle.lunaspring.API.commands.annotations.Check;
 import org.novasparkle.lunaspring.API.commands.annotations.SubCommand;
+import org.novasparkle.lunaspring.API.menus.items.NonMenuItem;
+import org.novasparkle.lunaspring.API.util.utilities.Localization;
 import org.novasparkle.lunaspring.API.util.utilities.Utils;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 
 @SubCommand(appliedCommand = "lunasintez", commandIdentifiers = "give")
 @Check(permissions = "lunasintez.give", flags = {})
-public class GiveSpawnerSubCommand implements LunaCompleter {
+public class GiveSpawnerSubCommand implements LunaExecutor {
     @Override
     public void invoke(CommandSender sender, String[] args) {
         switch (args.length) {
@@ -37,21 +38,18 @@ public class GiveSpawnerSubCommand implements LunaCompleter {
             return;
         }
         try {
-            String entityType = args[2];
-            if (!ConfigManager.getSection("entityTypes").getKeys(false).contains(entityType)) {
-                ConfigManager.send(sender, "notSintezable", "mob-%-" + entityType);
-                return;
-            }
-            ItemStack item = SintezSpawner.getSpawnerItem(entityType);
+            EntityType entityType = EntityType.valueOf(args[2].toUpperCase());
+
+            NonMenuItem item = SintezSpawner.getSpawnerItem(entityType);
             item.setAmount(amount);
-            player.getInventory().addItem(item);
+            item.give(player);
             ConfigManager.send(
                     sender, "spawnerGiven",
                     "player-%-" + player.getName(),
-                    "mob-%-" + entityType,
+                    "mob-%-" + Localization.localize(entityType),
                     "amount-%-" + amount
             );
-        } catch (NullPointerException | NoSuchElementException e) {
+        } catch (NullPointerException | IllegalArgumentException e) {
             ConfigManager.send(sender, "noSuchMob", "mob-%-" + args[2]);
         }
     }

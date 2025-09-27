@@ -100,6 +100,13 @@ items:
       - '{S}[category]'
       - '{M}Синтезировано'
 
+  DROPPED_SPAWNER:
+    material: SPAWNER
+    displayName: '[type]'
+    lore:
+      - ''
+      - '&7&oВ конце концов остается лишь одна душа...'
+
   order:
     - 21
     - 22

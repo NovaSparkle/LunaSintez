@@ -3,7 +3,7 @@ package org.novasparkle.lunasintez.sintez;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.novasparkle.lunasintez.configuration.ConfigManager;
-import org.novasparkle.lunasintez.menus.items.InstructionItem;
+import org.novasparkle.lunasintez.items.InstructionItem;
 
 import java.util.Arrays;
 import java.util.List;

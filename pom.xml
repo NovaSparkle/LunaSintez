@@ -6,7 +6,7 @@
 
   <groupId>org.novasparkle</groupId>
   <artifactId>LunaSintez</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <packaging>jar</packaging>
 
   <name>LunaSintez</name>
@@ -17,16 +17,7 @@
 
   <build>
     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.4.2</version>
-            <configuration>
-                <outputDirectory>
-                    C:\Users\ahrem\OneDrive\Рабочий стол\LunaClansTest\plugins
-                </outputDirectory>
-            </configuration>
-        </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -36,6 +27,18 @@
           <target>16</target>
         </configuration>
       </plugin>
+
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.4.2</version>
+          <configuration>
+              <outputDirectory>
+                  C:\Users\Nova\Desktop\Compiled Plugins
+              </outputDirectory>
+          </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -50,6 +53,7 @@
         </executions>
       </plugin>
     </plugins>
+
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -63,13 +67,26 @@
           <id>papermc-repo</id>
           <url>https://repo.papermc.io/repository/maven-public/</url>
       </repository>
+
       <repository>
           <id>sonatype</id>
           <url>https://oss.sonatype.org/content/groups/public/</url>
       </repository>
+
+      <repository>
+          <id>codemc-repo</id>
+          <url>https://repo.codemc.io/repository/maven-public/</url>
+          <layout>default</layout>
+      </repository>
+
       <repository>
           <id>jitpack.io</id>
           <url>https://jitpack.io</url>
+      </repository>
+
+      <repository>
+          <id>sk89q-repo</id>
+          <url>https://maven.enginehub.org/repo/</url>
       </repository>
   </repositories>
 
@@ -80,16 +97,25 @@
           <version>1.16.5-R0.1-SNAPSHOT</version>
           <scope>provided</scope>
       </dependency>
+
       <dependency>
           <groupId>com.github.ProGiple</groupId>
           <artifactId>SateSpawnerAPI</artifactId>
           <version>1.4.1</version>
           <scope>provided</scope>
       </dependency>
+
       <dependency>
           <groupId>com.github.NovaSparkle</groupId>
           <artifactId>LunaSpring</artifactId>
-          <version>3.4.7</version>
+          <version>3.7.3f</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>de.tr7zw</groupId>
+          <artifactId>item-nbt-api-plugin</artifactId>
+          <version>2.14.1</version>
           <scope>provided</scope>
       </dependency>
 
@@ -97,6 +123,13 @@
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok</artifactId>
           <version>1.18.30</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>com.sk89q.worldguard</groupId>
+          <artifactId>worldguard-bukkit</artifactId>
+          <version>7.0.9</version>
           <scope>provided</scope>
       </dependency>
   </dependencies>

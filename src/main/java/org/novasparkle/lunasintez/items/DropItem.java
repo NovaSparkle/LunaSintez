@@ -1,4 +1,4 @@
-package org.novasparkle.lunasintez.menus.items;
+package org.novasparkle.lunasintez.items;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.event.inventory.InventoryClickEvent;

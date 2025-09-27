@@ -10,6 +10,10 @@ decoration:
       lore: [ ]
 
 items:
+  instructionItem:
+    lore:
+      - ''
+      - '&7&oИ как из этого что-то собрать...'
   BACK:
     material: DARK_OAK_DOOR
     displayName: '{S}К синтезу'

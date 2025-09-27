@@ -3,7 +3,7 @@ package org.novasparkle.lunasintez.configuration;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.novasparkle.lunasintez.LunaSintez;
-import org.novasparkle.lunasintez.menus.items.InstructionItem;
+import org.novasparkle.lunasintez.items.InstructionItem;
 import org.novasparkle.lunaspring.API.configuration.IConfig;
 import org.novasparkle.lunaspring.API.util.service.managers.ColorManager;
 
@@ -14,7 +14,6 @@ public final class ConfigManager {
     private final static IConfig config;
     static {
         config = new IConfig(LunaSintez.getInstance());
-        System.out.println('+');
     }
 
     public static int getInt(String path) {

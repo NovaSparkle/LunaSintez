@@ -3,14 +3,15 @@ package org.novasparkle.lunasintez.sintez;
 import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.novasparkle.lunasintez.LunaSintez;
 import org.novasparkle.lunasintez.configuration.ConfigManager;
-import org.novasparkle.lunasintez.menus.items.InstructionItem;
-import org.novasparkle.lunasintez.menus.items.LineItem;
-import org.novasparkle.lunasintez.menus.items.LockedItem;
-import org.novasparkle.lunasintez.menus.items.OpenedItem;
+import org.novasparkle.lunasintez.items.InstructionItem;
+import org.novasparkle.lunasintez.items.LineItem;
+import org.novasparkle.lunasintez.items.LockedItem;
+import org.novasparkle.lunasintez.items.OpenedItem;
 import org.novasparkle.lunasintez.particles.ParticleTask;
 import org.novasparkle.lunaspring.API.configuration.Configuration;
 import org.novasparkle.lunaspring.API.menus.AMenu;
@@ -34,7 +35,7 @@ public class Line implements Iterable<LineItem> {
         this.items = new ArrayList<>();
         int i = 0;
         List<InstructionItem> usedMaterials = new ArrayList<>();
-        Configuration sintezMenu = new Configuration(LunaSintez.getInstance().getDataFolder(), "SintezMenu");
+        Configuration sintezMenu = new Configuration(LunaSintez.getInstance().getDataFolder(), "menus/SintezMenu");
         Iterator<Integer> orderIter = Utils.getSlotList(sintezMenu.getStringList(String.format("lockedQueue.%s", category.name()))).iterator();
 
         while (i++ < category.getLineSize()) {
@@ -43,13 +44,13 @@ public class Line implements Iterable<LineItem> {
                 iItem = instructionList.get(ThreadLocalRandom.current().nextInt(instructionList.size()));
             } while (usedMaterials.contains(iItem));
             usedMaterials.add(iItem);
-            this.items.add(new LockedItem(new Configuration(LunaSintez.getInstance().getDataFolder(), "SintezMenu"), iItem, orderIter.next().byteValue()));
+            this.items.add(new LockedItem(new Configuration(LunaSintez.getInstance().getDataFolder(), "menus/SintezMenu"), iItem, orderIter.next().byteValue()));
         }
     }
     public Line(ConfigurationSection section, Category category) {
         this.mobSection = section;
         this.items = new ArrayList<>();
-        Configuration sintezMenu =  new Configuration(LunaSintez.getInstance().getDataFolder(), "SintezMenu");
+        Configuration sintezMenu =  new Configuration(LunaSintez.getInstance().getDataFolder(), "menus/SintezMenu");
         Iterator<Integer> orderIter = Utils.getSlotList(sintezMenu.getStringList(String.format("lockedQueue.%s", category.name()))).iterator();
         AtomicReference<String> sKey = new AtomicReference<>();
         try {
@@ -77,28 +78,37 @@ public class Line implements Iterable<LineItem> {
     public List<OpenedItem> getOpened() {
         return this.items.stream().filter(LineItem::isOpened).map(lineItem -> ((OpenedItem) lineItem)).collect(Collectors.toList());
     }
-    public boolean checkItem(ItemStack itemStack, Location location) {
-        for (OpenedItem openedItem : this.getOpened()) {
-            if (this.compare(openedItem.getInstructionItem(), itemStack)) {
-                openedItem.increase(itemStack.getAmount());
-                this.save(openedItem);
-                return true;
-
-            } else if (openedItem.getAmount() == 1) return false;
-        }
+    public boolean checkItem(InventoryClickEvent event, Location location) {
+        ItemStack itemStack = event.getInventory().getItem(49);
+        assert itemStack != null;
 
         LockedItem nextItem = this.getNext();
-        if (this.compare(nextItem.getInstructionItem(), itemStack)) {
-            OpenedItem openedItem = this.openItem(itemStack.getAmount());
-            new ParticleTask(location, ConfigManager.getSection("settings.particles.onItemOpened")).runTaskAsynchronously(LunaSintez.getInstance());
-            assert openedItem != null;
-            this.save(openedItem);
-        } else {
-            this.getOpened().forEach(item -> {
-                item.decrease();
-                this.save(item);
-            });
-        }
+        if (nextItem != null) {
+            for (OpenedItem openedItem : this.getOpened()) {
+                if (this.compare(openedItem.getInstructionItem(), itemStack)) {
+                    openedItem.increase(itemStack.getAmount());
+                    this.save(openedItem);
+                    return true;
+
+                } else if (openedItem.getAmount() == 1) {
+                    ConfigManager.send(event.getWhoClicked(), "notEnoughItems", "slot-%-" + (this.getItems().indexOf(openedItem) + 1));
+                    return false;
+                }
+            }
+            if (this.compare(nextItem.getInstructionItem(), itemStack)) {
+
+                OpenedItem openedItem = this.openItem(itemStack.getAmount());
+                assert openedItem != null;
+                this.save(openedItem);
+                new ParticleTask(location, ConfigManager.getSection("settings.particles.onItemOpened")).runTaskAsynchronously(LunaSintez.getInstance());
+                ConfigManager.send(event.getWhoClicked(), "openedItem");
+            } else {
+                this.getOpened().forEach(item -> {
+                    item.decrease();
+                    this.save(item);
+                });
+            }
+        } else return false;
         return true;
     }
     private boolean compare(NonMenuItem item, ItemStack stack) {
@@ -121,6 +131,7 @@ public class Line implements Iterable<LineItem> {
 
     private void save(OpenedItem openedItem) {
         this.mobSection.set(String.format("line.%s", openedItem.getConfigIdentifier()), openedItem.getAmount());
+
     }
 
     public void saveAll() {
@@ -145,4 +156,6 @@ public class Line implements Iterable<LineItem> {
     public void insert(AMenu aMenu) {
         this.forEach(i -> i.insertItem(aMenu));
     }
+
+
 }

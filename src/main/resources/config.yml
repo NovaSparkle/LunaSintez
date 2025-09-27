@@ -178,38 +178,403 @@ entityTypes:
       displayName: ''
       lore: [ ]
 
+
+  # Невозможные
   EVOKER:
     material: EVOKER_SPAWN_EGG
     lore: [ ]
     category: 'UNREAL'
     displayName: '{S}Заклинатель'
-    evolution:
-      material: BARRIER
-      displayName: '{S}Невозможный'
-      lore:
-        - '{E}У этого моба нет эволюции, увы'
 
   POLAR_BEAR:
     material: POLAR_BEAR_SPAWN_EGG
     lore: [ ]
     category: 'UNREAL'
     displayName: '{S}Белый Мишка'
-    evolution:
-      material: BARRIER
-      displayName: '{S}Невозможный'
-      lore:
-        - '{E}У этого моба нет эволюции, увы'
 
   WANDERING_TRADER:
     material: WANDERING_TRADER_SPAWN_EGG
     lore: [ ]
     category: 'UNREAL'
     displayName: '{S}Странствующий торговец'
-    evolution:
-      material: BARRIER
-      displayName: '{S}Невозможный'
-      lore:
-        - '{E}У этого моба нет эволюции, увы'
+
+
+  # Другие
+  AXOLOTL:
+    ignore: true
+    material: AXOLOTL_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Аксолотль'
+
+  BAT:
+    ignore: true
+    material: BAT_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Летучая мышь'
+
+  BEE:
+    ignore: true
+    material: BEE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Пчёлка'
+
+  CAT:
+    ignore: true
+    material: CAT_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Кошка'
+
+  CHICKEN:
+    ignore: true
+    material: CHICKEN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Курица'
+
+  COD:
+    ignore: true
+    material: COD_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Треска'
+
+  DOLPHIN:
+    ignore: true
+    material: DOLPHIN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Дельфин'
+
+  DONKEY:
+    ignore: true
+    material: DONKEY_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Осёл'
+
+  FOX:
+    ignore: true
+    material: FOX_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Лиса'
+
+  GLOW_SQUID:
+    ignore: true
+    material: GLOW_SQUID_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Светящийся спрут'
+
+  GOAT:
+    ignore: true
+    material: GOAT_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Коза'
+
+  HORSE:
+    ignore: true
+    material: HORSE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Лошадь'
+
+  MUSHROOM_COW:
+    ignore: true
+    material: MOOSHROOM_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Мухоморная корова'
+
+  MULE:
+    ignore: true
+    material: MULE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Мул'
+
+  PANDA:
+    ignore: true
+    material: PANDA_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Панда'
+
+  PUFFERFISH:
+    ignore: true
+    material: PUFFERFISH_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Рыба-фугу'
+
+  RABBIT:
+    ignore: true
+    material: RABBIT_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Кролик'
+
+  SALMON:
+    ignore: true
+    material: SALMON_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Лосось'
+
+  SHEEP:
+    ignore: true
+    material: SHEEP_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Овца'
+
+  SKELETON_HORSE:
+    ignore: true
+    material: SKELETON_HORSE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Лошадь-скелет'
+
+  SNOWMAN:
+    ignore: true
+    material: WOLF_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Снежный голем'
+
+  STRIDER:
+    ignore: true
+    material: STRIDER_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Лавовый странник'
+
+  TROPICAL_FISH:
+    ignore: true
+    material: TROPICAL_FISH_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Тропическая рыба'
+
+  TURTLE:
+    ignore: true
+    material: TURTLE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Черепашка'
+
+  VILLAGER:
+    ignore: true
+    material: VILLAGER_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Деревенский житель'
+
+  WOLF:
+    ignore: true
+    material: WOLF_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Волк'
+
+  ZOMBIE_HORSE:
+    ignore: true
+    material: WOLF_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Зомби-лошадь'
+
+  ELDER_GUARDIAN:
+    ignore: true
+    material: ELDER_GUARDIAN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Древний страж'
+
+  ENDERMITE:
+    ignore: true
+    material: ENDERMITE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Эндермит'
+
+  GHAST:
+    ignore: true
+    material: GHAST_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Гаст'
+
+  HOGLIN:
+    ignore: true
+    material: HOGLIN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Хоглин'
+
+  HUSK:
+    ignore: true
+    material: HUSK_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Кадавр'
+
+  MAGMA_CUBE:
+    ignore: true
+    material: MAGMA_CUBE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Магмовый куб'
+
+  PHANTOM:
+    ignore: true
+    material: PHANTOM_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Фантом'
+
+  PIGLIN:
+    ignore: true
+    material: PIGLIN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Пиглин'
+
+  PIGLIN_BRUTE:
+    ignore: true
+    material: PIGLIN_BRUTE_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Пиглин-главарь'
+
+  RAVAGER:
+    ignore: true
+    material: RAVAGER_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Разоритель'
+
+  SHULKER:
+    ignore: true
+    material: SHULKER_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Шалкер'
+
+  SILVERFISH:
+    ignore: true
+    material: SILVERFISH_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Чешуйница'
+
+  SPIDER:
+    ignore: true
+    material: SPIDER_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Паук'
+
+  STRAY:
+    ignore: true
+    material: STRAY_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Странник'
+
+  VEX:
+    ignore: true
+    material: VEX_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Векс'
+
+  WITCH:
+    ignore: true
+    material: WITCH_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Ведьма'
+
+  WITHER_SKELETON:
+    ignore: true
+    material: WITHER_SKELETON_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Скелет-иссушитель'
+
+  ZOGLIN:
+    ignore: true
+    material: ZOGLIN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Зоглин'
+
+  ZOMBIE_VILLAGER:
+    ignore: true
+    material: ZOMBIE_VILLAGER_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Зомби-житель'
+
+  ZOMBIFIED_PIGLIN:
+    ignore: true
+    material: ZOMBIFIED_PIGLIN_SPAWN_EGG
+    lore:
+      - '{S}Отсутствует в списке по умолчанию'
+    category: 'COMMON'
+    displayName: '{S}Зомбифицированный пиглин'
 
 
 categories:
@@ -572,17 +937,19 @@ categories:
 
   UNREAL:
     name: 'Невозможные'
-    priority: 3
+    priority: 4
     instructionSize: 36
     lineSize: 27
     items:
       SNOWBALL:
         material: SNOWBALL
+
         nbtTags:
           BearFur: true
 
 settings:
   maxDistance: 3
+  sintezToDrop: 3
   particles:
     onItemOpened:
       radius: 0.5
@@ -594,6 +961,7 @@ settings:
 messages:
   noPermission: '{E}Нет прав на выполнение команды!'
   noItem: '{E}Недостаточно предметов: {M}[item]'
+  openedItem: '[SOUND] ITEM_BOTTLE_FILL_DRAGONBREATH'
   reloaded: '{S}Плагин перезагружен!'
   alreadySintezied: '{S}Открылся тип {S}[newType], поскольку уже был в синтезе!'
   noBlock: '{E}Наведитесь на рассадник!'
@@ -607,7 +975,9 @@ messages:
   needOpen: '{E}Данные рассадника не сгенерированы, необходимо открыть его!'
   EvoLocked: '{E}Эволюция недоступна!'
   SintezLocked: '{E}Моб заблокирован!'
-  noEvo: '{E}Для моба {S}[mobType] {E}нет эволюции!'
+  noEvo: '{E}Для этого моба нет эволюции!'
   horcruxPassed: '{S}Окаянт успешно вставлен!'
   invalidHorcrux: '{E}Неверный тип окаянта! Необходимый: [requiredType]'
   evoOpened: '{S}Эволюция разблокирована!'
+  notEnoughItems: '{E}Недостаточно предметов в слоте [slot]'
+  itemsReturned: '{S}Вы забыли к меню синтеза предмет {M}[item] x[amount], {S}он был возвращен вам в инвентарь'

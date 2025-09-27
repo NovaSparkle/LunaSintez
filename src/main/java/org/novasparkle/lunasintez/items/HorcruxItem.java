@@ -1,4 +1,4 @@
-package org.novasparkle.lunasintez.menus.items;
+package org.novasparkle.lunasintez.items;
 
 import lombok.NonNull;
 import org.bukkit.Material;
@@ -27,13 +27,16 @@ public class HorcruxItem extends Item {
             String nbtKey = NBTManager.getString(item, "EvoHorcrux");
             if (nbtKey != null) {
                 if (nbtKey.equals(this.entityName)) {
-                    ItemStack inItem = item.clone();
-                    inItem.setAmount(1);
+                    EvoMenu evoMenu = (EvoMenu) this.getMenu();
+                    Item copyItem = new Item(evoMenu.getConfiguration().getSection("evoFigures.unlockedHorcrux"), (byte) event.getRawSlot());
+                    copyItem.setAmount(1);
+
                     item.setAmount(item.getAmount() - 1);
-                    event.getInventory().setItem(event.getRawSlot(), inItem);
+
+                    copyItem.insert(evoMenu);
                     ConfigManager.send(event.getWhoClicked(), "horcruxPassed");
-                    EvoMenu closedMenu = (EvoMenu) this.getMenu();
-                    closedMenu.decreaseHorcrux(event.getRawSlot());
+
+                    evoMenu.decreaseHorcrux(event.getRawSlot());
 
                 } else
                     ConfigManager.send(event.getWhoClicked(), "invalidHorcrux", "requiredType-%-" + Localization.localize(EntityType.valueOf(this.entityName)));

@@ -2,7 +2,9 @@ package org.novasparkle.lunasintez.sintez;
 
 import lombok.Getter;
 import org.bukkit.configuration.ConfigurationSection;
-import org.novasparkle.lunasintez.menus.items.InstructionItem;
+import org.novasparkle.lunasintez.LunaSintez;
+import org.novasparkle.lunasintez.items.InstructionItem;
+import org.novasparkle.lunaspring.API.configuration.IConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,10 @@ public class Instruction {
     private final List<InstructionItem> instructionList;
     private final Line line;
     private final Category category;
+    private final IConfig instructionConfig;
     public Instruction(Category category, ConfigurationSection rootSection) {
         this.category = category;
+        this.instructionConfig = new IConfig(LunaSintez.getInstance().getDataFolder(), "menus/InstructionMenu");
         if (rootSection.getStringList("instruction").isEmpty()) {
             this.instructionList = new ArrayList<>();
             this.generateInstruction();
@@ -38,5 +42,6 @@ public class Instruction {
                 i++;
             }
         }
+
     }
 }

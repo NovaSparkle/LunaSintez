@@ -14,12 +14,12 @@ import java.util.function.BiConsumer;
 
 public enum EvoStatus implements Applicator {
     LOCKED((player, mobType) -> ConfigManager.send(player, "EvoLocked")),
-    EVO_OPENED((player, mobType) -> MenuManager.openInventory(player, new EvoMenu(player, (EvoMob) mobType))),
+    EVO_OPENED((player, mobType) -> MenuManager.openInventory(EvoMenu.getEvoMenu(player, (EvoMob) mobType))),
     EVOLUTED((player, mobType) -> {
         mobType.setMob();
         player.closeInventory();
     }),
-    NO_EVO(((player, mobType) -> ConfigManager.send(player, "noEvo", "mobType-%-" + mobType.getEntityType().name())));
+    NO_EVO(((player, mobType) -> ConfigManager.send(player, "noEvo")));
 
     private final BiConsumer<Player, MobType> action;
 
@@ -29,8 +29,7 @@ public enum EvoStatus implements Applicator {
 
     @Override
     public void apply(Item item) {
-        if (this.equals(NO_EVO)) return;
-        Configuration evoMainMenu = new Configuration(LunaSintez.getInstance().getDataFolder(), "EvoMainMenu");
+        Configuration evoMainMenu = new Configuration(LunaSintez.getInstance().getDataFolder(), "menus/EvoMainMenu");
         item.setAll(evoMainMenu.getSection(String.format("items.%s", this.name())));
         item.setGlowing(evoMainMenu.getBoolean(String.format("items.%s.enchanted", this.name())));
     }

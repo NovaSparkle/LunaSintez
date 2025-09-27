@@ -16,12 +16,13 @@ lockedQueue:
 sintezSlot: 49
 
 decoration:
-  fillType:
-    enabled: true
-    item:
-      material: BLACK_STAINED_GLASS_PANE
-      displayName: "&7Разделитель"
-      lore: [ ]
+  item:
+    material: BLACK_STAINED_GLASS_PANE
+    displayName: "&7Разделитель"
+    lore: [ ]
+    slots:
+      - '0-48'
+      - '50-53'
 
 items:
   defaultMaterial: BARRIER
@@ -52,3 +53,4 @@ items:
   OPENED_ITEM:
     lore:
       - '{S}Угаданный предмет'
+      - '{S}x[amount]'
